@@ -1,5 +1,4 @@
-wiondows-phone-sdk-demos
-========================
+# Wiondows Phone SDK Demos
 
 AVOS Cloud windows phone sdk 示例程序
 
