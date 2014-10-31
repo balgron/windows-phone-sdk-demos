@@ -1,5 +1,5 @@
-# Wiondows Phone SDK Demos
+# LeanCloud Wiondows Phone SDK Demos
 
-AVOS Cloud windows phone sdk 示例程序
+LeanCloud Windows Phone SDK 示例程序
 
-[AVOS Cloud 站点下载地址](https://download.avoscloud.com/demo/)
+[LeanCloud 站点下载地址](http://download.leancloud.cn/demo/)
