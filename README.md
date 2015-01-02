@@ -1,4 +1,4 @@
-# LeanCloud Wiondows Phone SDK Demos
+# LeanCloud Windows Phone SDK Demos
 
 LeanCloud Windows Phone SDK 示例程序
 
