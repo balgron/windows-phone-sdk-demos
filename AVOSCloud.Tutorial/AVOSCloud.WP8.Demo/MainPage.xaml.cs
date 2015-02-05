@@ -8,7 +8,6 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Threading.Tasks;
-using AVOSCloud.Internal;
 using System.Threading;
 using System.IO;
 using Microsoft.Phone.Tasks;
