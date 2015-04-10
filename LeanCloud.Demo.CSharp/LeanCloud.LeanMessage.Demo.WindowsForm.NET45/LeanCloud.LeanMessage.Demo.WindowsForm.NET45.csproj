@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AVOSCloud.NetFx45">
-      <HintPath>..\packages\AVOSCloud.NetFx45.1.0.0.0-beta\lib\AVOSCloud.NetFx45.dll</HintPath>
+    <Reference Include="AVOSCloud.NetFx45, Version=0.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AVOSCloud.NetFx45.1.0.0.1-beta\lib\AVOSCloud.NetFx45.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

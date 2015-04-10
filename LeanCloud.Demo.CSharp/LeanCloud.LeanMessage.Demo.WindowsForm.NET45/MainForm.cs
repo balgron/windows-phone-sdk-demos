@@ -72,7 +72,12 @@ namespace SDK.Test.WinForm
 
         private void selfClient_OnMessageReceieved(object sender, AVIMOnMessageReceivedEventArgs e)
         {
-            if (e.Conversation.ConversationId == currentConversation.ConversationId)
+            var flag = currentConversation != null;
+            if (flag)
+            {
+                flag = e.Conversation.ConversationId == currentConversation.ConversationId;
+            }
+            if (flag)
             {
                 RefreshUI(() =>
                 {
@@ -90,7 +95,12 @@ namespace SDK.Test.WinForm
         {
             var selection = (AVIMConversation)sender;
 
-            if (selection.ConversationId == currentConversation.ConversationId)
+            var flag = currentConversation != null;
+            if (flag)
+            {
+                flag = selection.ConversationId == currentConversation.ConversationId;
+            }
+            if (flag)
             {
                 RefreshUI(() =>
                 {
@@ -138,6 +148,10 @@ namespace SDK.Test.WinForm
             }
             return message.MessageBody;
         }
+        /// <summary>
+        /// 更新 BindList 刷新 ListBox 的内容
+        /// </summary>
+        /// <param name="action"></param>
         private void RefreshUI(Action action)
         {
             if (this.InvokeRequired)
@@ -183,8 +197,6 @@ namespace SDK.Test.WinForm
             CacheMessage(this.currentConversation, tp.Item2);
             txb_input.Clear();
         }
-
-        
 
         private void MainForm_Load(object sender, EventArgs e)
         {
