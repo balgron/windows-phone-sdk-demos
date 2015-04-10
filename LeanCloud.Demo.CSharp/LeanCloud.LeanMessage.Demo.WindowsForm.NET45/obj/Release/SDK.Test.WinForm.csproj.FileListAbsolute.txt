@@ -1,0 +1,1 @@
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Release\SDK.Test.WinForm.exe.config

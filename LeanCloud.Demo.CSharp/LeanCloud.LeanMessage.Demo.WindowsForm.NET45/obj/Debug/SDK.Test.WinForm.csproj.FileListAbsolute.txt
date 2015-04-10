@@ -1,0 +1,14 @@
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\SDK.Test.WinForm.exe.config
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\SDK.Test.WinForm.exe
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\SDK.Test.WinForm.pdb
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\AVOSCloud.NetFx45.dll
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\websocket-sharp.dll
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\AVOSCloud.NetFx45.pdb
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\AVOSCloud.NetFx45.xml
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\bin\Debug\websocket-sharp.xml
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.csprojResolveAssemblyReference.cache
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.Properties.Resources.resources
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.csproj.GenerateResource.Cache
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.exe
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.pdb
+C:\Users\Cloud\Documents\csharp-sdk-1\c#\SolutionWrraper\WindowsPC\SDK.Test.WinForm\obj\Debug\SDK.Test.WinForm.MainForm.resources
