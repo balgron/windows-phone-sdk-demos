@@ -1,0 +1,12 @@
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SDK.Test.WinForm.exe.config
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\SDK.Test.WinForm.exe
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\SDK.Test.WinForm.pdb
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\LeanCloud.LeanMessage.Demo.WindowsForm.NET45.csprojResolveAssemblyReference.cache
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\SDK.Test.WinForm.MainForm.resources
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\SDK.Test.WinForm.Properties.Resources.resources
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\obj\Release\LeanCloud.LeanMessage.Demo.WindowsForm.NET45.csproj.GenerateResource.Cache
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SDK.Test.WinForm.exe
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SDK.Test.WinForm.pdb
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\websocket-sharp.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\websocket-sharp.xml

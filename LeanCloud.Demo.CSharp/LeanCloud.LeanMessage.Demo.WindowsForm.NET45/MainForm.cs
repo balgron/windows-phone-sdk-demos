@@ -1,4 +1,5 @@
-﻿using AVOSCloud.RealtimeMessageV2;
+﻿using AVOSCloud;
+using AVOSCloud.RealtimeMessageV2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,12 +63,21 @@ namespace SDK.Test.WinForm
             if (selfClient != null)
             {
                 selfClient.OnMessageReceieved += selfClient_OnMessageReceieved;
+                selfClient.OnConversationMembersChanged += selfClient_OnConversationMembersChanged;
             }
 
             if (currentConversation != null)
             {
                 currentConversation.OnTextMessageReceived += currentConversation_OnTextMessageReceived;
             }
+        }
+
+        private void selfClient_OnConversationMembersChanged(object sender, AVIMOnMembersChangedEventArgs e)
+        {
+            RefreshUI(() =>
+            {
+                MessageBox.Show(e.Conversation.ConversationId + ": " + e.AffectedMembers[0] + " " + e.AffectedType.ToString());
+            });
         }
 
         private void selfClient_OnMessageReceieved(object sender, AVIMOnMessageReceivedEventArgs e)
@@ -221,6 +231,21 @@ namespace SDK.Test.WinForm
 
             lbx_history.DataSource = historyDictionary[selection.ConversationId];
             Log("当前选择对话为： " + selection.Name);
+        }
+
+        private async void btn_addMember_Click(object sender, EventArgs e)
+        {
+            await currentConversation.AddMembersAsync(txb_memberId.Text.Trim());
+        }
+
+        private async void btn_removeMember_Click(object sender, EventArgs e)
+        {
+            await currentConversation.RemoveMembersAsync(txb_memberId.Text.Trim());
+        }
+
+        private async void bnt_quitConversation_Click(object sender, EventArgs e)
+        {
+            await currentConversation.LeftAsync();
         }
 
 

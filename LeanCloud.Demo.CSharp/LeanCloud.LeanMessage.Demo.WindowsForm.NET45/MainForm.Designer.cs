@@ -33,6 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bnt_quitConversation = new System.Windows.Forms.Button();
+            this.txb_memberId = new System.Windows.Forms.TextBox();
+            this.btn_removeMember = new System.Windows.Forms.Button();
+            this.btn_addMember = new System.Windows.Forms.Button();
             this.lbx_history = new System.Windows.Forms.ListBox();
             this.lbx_conversations = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,6 +71,7 @@
             this.txb_clientId.Name = "txb_clientId";
             this.txb_clientId.Size = new System.Drawing.Size(324, 20);
             this.txb_clientId.TabIndex = 1;
+            this.txb_clientId.Text = "A";
             // 
             // label1
             // 
@@ -88,6 +93,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bnt_quitConversation);
+            this.panel1.Controls.Add(this.txb_memberId);
+            this.panel1.Controls.Add(this.btn_removeMember);
+            this.panel1.Controls.Add(this.btn_addMember);
             this.panel1.Controls.Add(this.lbx_history);
             this.panel1.Controls.Add(this.lbx_conversations);
             this.panel1.Controls.Add(this.label6);
@@ -104,8 +113,46 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(22, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(496, 553);
+            this.panel1.Size = new System.Drawing.Size(685, 553);
             this.panel1.TabIndex = 4;
+            // 
+            // bnt_quitConversation
+            // 
+            this.bnt_quitConversation.Location = new System.Drawing.Point(476, 502);
+            this.bnt_quitConversation.Name = "bnt_quitConversation";
+            this.bnt_quitConversation.Size = new System.Drawing.Size(75, 23);
+            this.bnt_quitConversation.TabIndex = 19;
+            this.bnt_quitConversation.Text = "退出对话";
+            this.bnt_quitConversation.UseVisualStyleBackColor = true;
+            this.bnt_quitConversation.Click += new System.EventHandler(this.bnt_quitConversation_Click);
+            // 
+            // txb_memberId
+            // 
+            this.txb_memberId.Location = new System.Drawing.Point(561, 118);
+            this.txb_memberId.Name = "txb_memberId";
+            this.txb_memberId.Size = new System.Drawing.Size(100, 20);
+            this.txb_memberId.TabIndex = 18;
+            this.txb_memberId.Text = "Tom";
+            // 
+            // btn_removeMember
+            // 
+            this.btn_removeMember.Location = new System.Drawing.Point(475, 155);
+            this.btn_removeMember.Name = "btn_removeMember";
+            this.btn_removeMember.Size = new System.Drawing.Size(80, 23);
+            this.btn_removeMember.TabIndex = 17;
+            this.btn_removeMember.Text = "剔除成员";
+            this.btn_removeMember.UseVisualStyleBackColor = true;
+            this.btn_removeMember.Click += new System.EventHandler(this.btn_removeMember_Click);
+            // 
+            // btn_addMember
+            // 
+            this.btn_addMember.Location = new System.Drawing.Point(475, 115);
+            this.btn_addMember.Name = "btn_addMember";
+            this.btn_addMember.Size = new System.Drawing.Size(80, 25);
+            this.btn_addMember.TabIndex = 16;
+            this.btn_addMember.Text = "添加成员";
+            this.btn_addMember.UseVisualStyleBackColor = true;
+            this.btn_addMember.Click += new System.EventHandler(this.btn_addMember_Click);
             // 
             // lbx_history
             // 
@@ -226,7 +273,7 @@
             this.panel2.Controls.Add(this.txb_log);
             this.panel2.Controls.Add(this.btn_clearLog);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(559, 12);
+            this.panel2.Location = new System.Drawing.Point(787, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(477, 553);
             this.panel2.TabIndex = 7;
@@ -235,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 635);
+            this.ClientSize = new System.Drawing.Size(1300, 635);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
@@ -270,6 +317,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lbx_conversations;
         private System.Windows.Forms.ListBox lbx_history;
+        private System.Windows.Forms.Button btn_addMember;
+        private System.Windows.Forms.Button btn_removeMember;
+        private System.Windows.Forms.TextBox txb_memberId;
+        private System.Windows.Forms.Button bnt_quitConversation;
     }
 }
 
