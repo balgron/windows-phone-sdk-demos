@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="AVOSCloud.NetFx45, Version=0.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AVOSCloud.NetFx45.1.0.0.1-beta\lib\AVOSCloud.NetFx45.dll</HintPath>
+      <HintPath>..\packages\AVOSCloud.NetFx45.1.0.0.2-beta\lib\AVOSCloud.NetFx45.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,7 +46,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="websocket-sharp">
+    <Reference Include="websocket-sharp, Version=1.0.2.42043, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WebSocketSharp.1.0.3-rc7\lib\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
