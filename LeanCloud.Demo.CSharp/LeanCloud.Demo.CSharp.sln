@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanMeaasge.Demo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanMessage.Demo.WindowsForm.NET45", "LeanCloud.LeanMessage.Demo.WindowsForm.NET45\LeanCloud.LeanMessage.Demo.WindowsForm.NET45.csproj", "{B702502A-3768-4BF3-98C1-E9E95C47A878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVOSCloud.NetFx45", "..\..\csharp-sdk-1\c#\AVOSCloud\AVOSCloud.NetFx45\AVOSCloud.NetFx45.csproj", "{6C464960-B442-4905-87B5-ED46E0986B22}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,22 +113,6 @@ Global
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|Any CPU.Build.0 = Release|Any CPU
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|ARM.ActiveCfg = Release|Any CPU
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|x86.ActiveCfg = Release|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Release|ARM.ActiveCfg = Release|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Release|x86.ActiveCfg = Release|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.stage|Any CPU.ActiveCfg = stage|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.stage|Any CPU.Build.0 = stage|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.stage|ARM.ActiveCfg = stage|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.stage|x86.ActiveCfg = stage|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Test|Any CPU.ActiveCfg = Test|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Test|Any CPU.Build.0 = Test|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Test|ARM.ActiveCfg = Test|Any CPU
-		{6C464960-B442-4905-87B5-ED46E0986B22}.Test|x86.ActiveCfg = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

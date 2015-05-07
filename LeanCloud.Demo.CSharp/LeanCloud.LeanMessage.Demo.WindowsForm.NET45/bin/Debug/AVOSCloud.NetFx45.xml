@@ -2007,6 +2007,11 @@
             创建查询用户的AVQuery。
             </summary>
         </member>
+        <member name="P:AVOSCloud.AVUser.SessionToken">
+            <summary>
+            当前用户登陆之后的有效鉴权 Token，用户一旦修改了密码之后失效。
+            </summary>
+        </member>
         <member name="P:AVOSCloud.AVUser.Username">
             <summary>
             用户名。

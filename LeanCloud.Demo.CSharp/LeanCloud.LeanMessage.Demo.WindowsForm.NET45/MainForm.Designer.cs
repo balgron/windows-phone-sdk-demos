@@ -51,6 +51,7 @@
             this.txb_log = new System.Windows.Forms.TextBox();
             this.btn_clearLog = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.brn_queryHistory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.brn_queryHistory);
             this.panel1.Controls.Add(this.bnt_quitConversation);
             this.panel1.Controls.Add(this.txb_memberId);
             this.panel1.Controls.Add(this.btn_removeMember);
@@ -159,7 +161,7 @@
             this.lbx_history.FormattingEnabled = true;
             this.lbx_history.Location = new System.Drawing.Point(116, 113);
             this.lbx_history.Name = "lbx_history";
-            this.lbx_history.Size = new System.Drawing.Size(272, 303);
+            this.lbx_history.Size = new System.Drawing.Size(272, 277);
             this.lbx_history.TabIndex = 15;
             // 
             // lbx_conversations
@@ -278,6 +280,16 @@
             this.panel2.Size = new System.Drawing.Size(477, 553);
             this.panel2.TabIndex = 7;
             // 
+            // brn_queryHistory
+            // 
+            this.brn_queryHistory.Location = new System.Drawing.Point(116, 393);
+            this.brn_queryHistory.Name = "brn_queryHistory";
+            this.brn_queryHistory.Size = new System.Drawing.Size(98, 23);
+            this.brn_queryHistory.TabIndex = 20;
+            this.brn_queryHistory.Text = "获取聊天记录";
+            this.brn_queryHistory.UseVisualStyleBackColor = true;
+            this.brn_queryHistory.Click += new System.EventHandler(this.brn_queryHistory_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +333,7 @@
         private System.Windows.Forms.Button btn_removeMember;
         private System.Windows.Forms.TextBox txb_memberId;
         private System.Windows.Forms.Button bnt_quitConversation;
+        private System.Windows.Forms.Button brn_queryHistory;
     }
 }
 

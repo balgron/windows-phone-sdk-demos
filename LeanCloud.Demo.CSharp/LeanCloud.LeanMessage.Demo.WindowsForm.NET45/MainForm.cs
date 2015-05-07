@@ -72,8 +72,18 @@ namespace SDK.Test.WinForm
             }
         }
 
-        private void selfClient_OnConversationMembersChanged(object sender, AVIMOnMembersChangedEventArgs e)
+        private async void selfClient_OnConversationMembersChanged(object sender, AVIMOnMembersChangedEventArgs e)
         {
+
+            if (e.AffectedType == AVIMConversationEventType.Joined)
+            {
+                await e.Conversation.FetchAsync();
+                RefreshUI(() =>
+                {
+                    conversations.Add(e.Conversation);
+                });
+            }
+
             RefreshUI(() =>
             {
                 MessageBox.Show(e.Conversation.ConversationId + ": " + e.AffectedMembers[0] + " " + e.AffectedType.ToString());
@@ -230,7 +240,7 @@ namespace SDK.Test.WinForm
             }
 
             lbx_history.DataSource = historyDictionary[selection.ConversationId];
-            Log("当前选择对话为： " + selection.Name);
+            Log("当前选择对话为： " + selection.Name + ",对话最后更新的时间为：" + selection.UpdatedAt.Value.ToShortTimeString());
         }
 
         private async void btn_addMember_Click(object sender, EventArgs e)
@@ -246,6 +256,19 @@ namespace SDK.Test.WinForm
         private async void bnt_quitConversation_Click(object sender, EventArgs e)
         {
             await currentConversation.LeftAsync();
+        }
+
+        private async void brn_queryHistory_Click(object sender, EventArgs e)
+        {
+            var history = await currentConversation.QueryHistory(DateTime.Now, 100, this.currentConversation.CurrentClient.ClientId);
+            //var count = history.Count();
+
+            //MessageBox.Show(count.ToString());
+
+            foreach (var hm in history)
+            {
+                CacheMessage(currentConversation, hm);
+            }
         }
 
 

@@ -15,7 +15,7 @@ namespace SDK.Test.WinForm
         [STAThread]
         static void Main()
         {
-            AVClient.Initialize("uay57kigwe0b6f5n0e1d4z4xhydsml3dor24bzwvzr57wdap", "kfgz7jjfsk55r5a8a3y4ttd3je1ko11bkibcikonk32oozww");
+            AVClient.Initialize("ih6v94x2o6t338rshsn7vr4mlsv9hcwjff28oll2ejwj3k7h", "ifdkojmxiolexkwblvk6mdw2pzczslmhwen171seykdk3in5");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
