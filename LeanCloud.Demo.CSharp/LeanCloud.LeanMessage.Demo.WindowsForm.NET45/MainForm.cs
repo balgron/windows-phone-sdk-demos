@@ -213,7 +213,7 @@ namespace SDK.Test.WinForm
         private async void btn_send_Click(object sender, EventArgs e)
         {
             var selection = (AVIMConversation)lbx_conversations.SelectedItem;
-            var tp = await selection.SendTextMessageAsync(txb_input.Text.Trim());
+            var tp = await selection.SendTextMessageAsync(txb_input.Text.Trim(),false,true);
             CacheMessage(this.currentConversation, tp.Item2);
             txb_input.Clear();
         }

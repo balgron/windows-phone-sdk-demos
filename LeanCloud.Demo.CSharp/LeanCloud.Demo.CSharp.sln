@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanMeaasge.Demo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanMessage.Demo.WindowsForm.NET45", "LeanCloud.LeanMessage.Demo.WindowsForm.NET45\LeanCloud.LeanMessage.Demo.WindowsForm.NET45.csproj", "{B702502A-3768-4BF3-98C1-E9E95C47A878}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanStorage.Demo.WindowsForm.NET45", "LeanCloud.LeanStorage.Demo.WindowsForm.NET45\LeanCloud.LeanStorage.Demo.WindowsForm.NET45.csproj", "{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,22 @@ Global
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|Any CPU.Build.0 = Release|Any CPU
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|ARM.ActiveCfg = Release|Any CPU
 		{B702502A-3768-4BF3-98C1-E9E95C47A878}.Test|x86.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.stage|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.stage|Any CPU.Build.0 = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.stage|ARM.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.stage|x86.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Test|Any CPU.Build.0 = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Test|ARM.ActiveCfg = Release|Any CPU
+		{FA5AFDCA-4F0C-41B9-A57D-1D5999F46CA7}.Test|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
