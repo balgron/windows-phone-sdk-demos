@@ -1,2 +1,2 @@
 # Deprecated
-前前往 https://github.com/leancloud/leancloud-demos#windows-phone 。
+请前往 https://github.com/leancloud/leancloud-demos#windows-phone 。
