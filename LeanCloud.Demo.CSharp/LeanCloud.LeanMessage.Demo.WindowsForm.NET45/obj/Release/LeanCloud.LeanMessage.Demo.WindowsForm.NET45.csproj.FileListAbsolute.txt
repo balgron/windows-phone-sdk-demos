@@ -10,3 +10,9 @@ C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.dll
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\websocket-sharp.dll
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\websocket-sharp.xml
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\sqlite3.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SQLite.Net.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SQLite.Net.Async.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SQLite.Net.Platform.Generic.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.pdb
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.xml

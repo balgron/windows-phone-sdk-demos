@@ -310,6 +310,13 @@
             <returns>是否发送成功。</returns>
             <param name="mobilePhoneNumber">手机号。</param>
         </member>
+        <member name="M:AVOSCloud.AVCloud.RequestVoiceCode(System.String)">
+            <summary>
+            发送语音验证码
+            </summary>
+            <returns>操作结果</returns>
+            <param name="mobilePhoneNumber">手机号</param>
+        </member>
         <member name="M:AVOSCloud.AVCloud.VerifySmsCode(System.String,System.String)">
             <summary>
             验证是否是有效短信验证码。
@@ -2068,12 +2075,19 @@
             <param name="previous">The most recent operation on the field, or null if none.</param>
             <returns>A new AVFieldOperation or this.</returns>
         </member>
+        <member name="M:AVOSCloud.Internal.AVCache.InitSQLConnection(System.String)">
+            <summary>
+            Initializes the SQL connection.
+            </summary>
+            <param name="con_string">The con_string.</param>
+            <exception cref="T:System.NotSupportedException">聊天缓存组件需要依赖 sqlite3.dll 才能正确运行，请确保您的运行目录下存在 sqlite3.dll.</exception>
+        </member>
         <member name="T:AVOSCloud.Internal.AVCacheAttribute">
             <summary>
             
             </summary>
         </member>
-        <member name="P:AVOSCloud.Internal.AVCacheAttribute.TableName">
+        <member name="P:AVOSCloud.Internal.AVCacheAttribute.DbName">
             <summary>
             Gets or sets the name of the table.
             </summary>
@@ -2331,6 +2345,11 @@
             <param name="parameterTypes"></param>
             <returns></returns>
         </member>
+        <member name="T:AVOSCloud.Internal.SettingsWrapperBase">
+            <summary>
+            Wraps the custom settings object for AVOSCloud so that it can be exposed as ApplicationSettings.
+            </summary>
+        </member>
         <member name="T:AVOSCloud.Internal.SynchronizedEventHandler`1">
             <summary>
             Represents an event handler that calls back from the synchronization context
@@ -2374,638 +2393,6 @@
             running task to return immediately without breaking the dependency
             chain. It also ensures that errors do not propagate.</param>
             <returns>A new task that should be awaited by enqueued tasks.</returns>
-        </member>
-        <member name="T:AVOSCloud.Internal.SQLiteConnection">
-            <summary>
-            Represents an open connection to a SQLite database.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.#ctor(System.String,System.Boolean)">
-            <summary>
-            Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
-            </summary>
-            <param name="databasePath">
-            Specifies the path to the database file.
-            </param>
-            <param name="storeDateTimeAsTicks">
-            Specifies whether to store DateTime properties as ticks (true) or strings (false). You
-            absolutely do want to store them as Ticks in all new projects. The value of false is
-            only here for backwards compatibility. There is a *significant* speed advantage, with no
-            down sides, when setting storeDateTimeAsTicks = true.
-            If you use DateTimeOffset properties, it will be always stored as ticks regardingless
-            the storeDateTimeAsTicks parameter.
-            </param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.#ctor(System.String,AVOSCloud.Internal.SQLiteOpenFlags,System.Boolean)">
-            <summary>
-            Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
-            </summary>
-            <param name="databasePath">
-            Specifies the path to the database file.
-            </param>
-            <param name="storeDateTimeAsTicks">
-            Specifies whether to store DateTime properties as ticks (true) or strings (false). You
-            absolutely do want to store them as Ticks in all new projects. The value of false is
-            only here for backwards compatibility. There is a *significant* speed advantage, with no
-            down sides, when setting storeDateTimeAsTicks = true.
-            If you use DateTimeOffset properties, it will be always stored as ticks regardingless
-            the storeDateTimeAsTicks parameter.
-            </param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.GetMapping(System.Type,AVOSCloud.Internal.CreateFlags)">
-            <summary>
-            Retrieves the mapping that is automatically generated for the given type.
-            </summary>
-            <param name="type">
-            The type whose mapping to the database is returned.
-            </param>         
-            <param name="createFlags">
-            Optional flags allowing implicit PK and indexes based on naming conventions
-            </param>     
-            <returns>
-            The mapping represents the schema of the columns of the database and contains 
-            methods to set and get properties of objects.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.GetMapping``1">
-            <summary>
-            Retrieves the mapping that is automatically generated for the given type.
-            </summary>
-            <returns>
-            The mapping represents the schema of the columns of the database and contains 
-            methods to set and get properties of objects.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.DropTable``1">
-            <summary>
-            Executes a "drop table" on the database.  This is non-recoverable.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateTable``1(AVOSCloud.Internal.CreateFlags)">
-            <summary>
-            Executes a "create table if not exists" on the database. It also
-            creates any specified indexes on the columns of the table. It uses
-            a schema automatically generated from the specified type. You can
-            later access this schema by calling GetMapping.
-            </summary>
-            <returns>
-            The number of entries added to the database schema.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateTable(System.Type,AVOSCloud.Internal.CreateFlags)">
-            <summary>
-            Executes a "create table if not exists" on the database. It also
-            creates any specified indexes on the columns of the table. It uses
-            a schema automatically generated from the specified type. You can
-            later access this schema by calling GetMapping.
-            </summary>
-            <param name="ty">Type to reflect to a database table.</param>
-            <param name="createFlags">Optional flags allowing implicit PK and indexes based on naming conventions.</param>  
-            <returns>
-            The number of entries added to the database schema.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateIndex(System.String,System.String,System.String[],System.Boolean)">
-            <summary>
-            Creates an index for the specified table and columns.
-            </summary>
-            <param name="indexName">Name of the index to create</param>
-            <param name="tableName">Name of the database table</param>
-            <param name="columnNames">An array of column names to index</param>
-            <param name="unique">Whether the index should be unique</param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateIndex(System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            Creates an index for the specified table and column.
-            </summary>
-            <param name="indexName">Name of the index to create</param>
-            <param name="tableName">Name of the database table</param>
-            <param name="columnName">Name of the column to index</param>
-            <param name="unique">Whether the index should be unique</param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateIndex(System.String,System.String,System.Boolean)">
-            <summary>
-            Creates an index for the specified table and column.
-            </summary>
-            <param name="tableName">Name of the database table</param>
-            <param name="columnName">Name of the column to index</param>
-            <param name="unique">Whether the index should be unique</param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateIndex(System.String,System.String[],System.Boolean)">
-            <summary>
-            Creates an index for the specified table and columns.
-            </summary>
-            <param name="tableName">Name of the database table</param>
-            <param name="columnNames">An array of column names to index</param>
-            <param name="unique">Whether the index should be unique</param>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:AVOSCloud.Internal.SQLiteConnection.CreateIndex``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)" -->
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.NewCommand">
-            <summary>
-            Creates a new SQLiteCommand. Can be overridden to provide a sub-class.
-            </summary>
-            <seealso cref="M:AVOSCloud.Internal.SQLiteCommand.OnInstanceCreated(System.Object)"/>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.CreateCommand(System.String,System.Object[])">
-            <summary>
-            Creates a new SQLiteCommand given the command text with arguments. Place a '?'
-            in the command text for each of the arguments.
-            </summary>
-            <param name="cmdText">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the command text.
-            </param>
-            <returns>
-            A <see cref="T:AVOSCloud.Internal.SQLiteCommand"/>
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Execute(System.String,System.Object[])">
-            <summary>
-            Creates a SQLiteCommand given the command text (SQL) with arguments. Place a '?'
-            in the command text for each of the arguments and then executes that command.
-            Use this method instead of Query when you don't expect rows back. Such cases include
-            INSERTs, UPDATEs, and DELETEs.
-            You can set the Trace or TimeExecution properties of the connection
-            to profile execution.
-            </summary>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            The number of rows modified in the database as a result of this execution.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Query``1(System.String,System.Object[])">
-            <summary>
-            Creates a SQLiteCommand given the command text (SQL) with arguments. Place a '?'
-            in the command text for each of the arguments and then executes that command.
-            It returns each row of the result using the mapping automatically generated for
-            the given type.
-            </summary>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            An enumerable with one result for each row returned by the query.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.DeferredQuery``1(System.String,System.Object[])">
-            <summary>
-            Creates a SQLiteCommand given the command text (SQL) with arguments. Place a '?'
-            in the command text for each of the arguments and then executes that command.
-            It returns each row of the result using the mapping automatically generated for
-            the given type.
-            </summary>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            An enumerable with one result for each row returned by the query.
-            The enumerator will call sqlite3_step on each call to MoveNext, so the database
-            connection must remain open for the lifetime of the enumerator.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Query(AVOSCloud.Internal.TableMapping,System.String,System.Object[])">
-            <summary>
-            Creates a SQLiteCommand given the command text (SQL) with arguments. Place a '?'
-            in the command text for each of the arguments and then executes that command.
-            It returns each row of the result using the specified mapping. This function is
-            only used by libraries in order to query the database via introspection. It is
-            normally not used.
-            </summary>
-            <param name="map">
-            A <see cref="T:AVOSCloud.Internal.TableMapping"/> to use to convert the resulting rows
-            into objects.
-            </param>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            An enumerable with one result for each row returned by the query.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.DeferredQuery(AVOSCloud.Internal.TableMapping,System.String,System.Object[])">
-            <summary>
-            Creates a SQLiteCommand given the command text (SQL) with arguments. Place a '?'
-            in the command text for each of the arguments and then executes that command.
-            It returns each row of the result using the specified mapping. This function is
-            only used by libraries in order to query the database via introspection. It is
-            normally not used.
-            </summary>
-            <param name="map">
-            A <see cref="T:AVOSCloud.Internal.TableMapping"/> to use to convert the resulting rows
-            into objects.
-            </param>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            An enumerable with one result for each row returned by the query.
-            The enumerator will call sqlite3_step on each call to MoveNext, so the database
-            connection must remain open for the lifetime of the enumerator.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Table``1">
-            <summary>
-            Returns a queryable interface to the table represented by the given type.
-            </summary>
-            <returns>
-            A queryable object that is able to translate Where, OrderBy, and Take
-            queries into native SQL.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Get``1(System.Object)">
-            <summary>
-            Attempts to retrieve an object with the given primary key from the table
-            associated with the specified type. Use of this method requires that
-            the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).
-            </summary>
-            <param name="pk">
-            The primary key.
-            </param>
-            <returns>
-            The object with the given primary key. Throws a not found exception
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            Attempts to retrieve the first object that matches the predicate from the table
-            associated with the specified type. 
-            </summary>
-            <param name="predicate">
-            A predicate for which object to find.
-            </param>
-            <returns>
-            The object that matches the given predicate. Throws a not found exception
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Find``1(System.Object)">
-            <summary>
-            Attempts to retrieve an object with the given primary key from the table
-            associated with the specified type. Use of this method requires that
-            the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).
-            </summary>
-            <param name="pk">
-            The primary key.
-            </param>
-            <returns>
-            The object with the given primary key or null
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Find(System.Object,AVOSCloud.Internal.TableMapping)">
-            <summary>
-            Attempts to retrieve an object with the given primary key from the table
-            associated with the specified type. Use of this method requires that
-            the given type have a designated PrimaryKey (using the PrimaryKeyAttribute).
-            </summary>
-            <param name="pk">
-            The primary key.
-            </param>
-            <param name="map">
-            The TableMapping used to identify the object type.
-            </param>
-            <returns>
-            The object with the given primary key or null
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Find``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            Attempts to retrieve the first object that matches the predicate from the table
-            associated with the specified type. 
-            </summary>
-            <param name="predicate">
-            A predicate for which object to find.
-            </param>
-            <returns>
-            The object that matches the given predicate or null
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.FindWithQuery``1(System.String,System.Object[])">
-            <summary>
-            Attempts to retrieve the first object that matches the query from the table
-            associated with the specified type. 
-            </summary>
-            <param name="query">
-            The fully escaped SQL.
-            </param>
-            <param name="args">
-            Arguments to substitute for the occurences of '?' in the query.
-            </param>
-            <returns>
-            The object that matches the given predicate or null
-            if the object is not found.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction">
-            <summary>
-            Begins a new transaction. Call <see cref="M:AVOSCloud.Internal.SQLiteConnection.Commit"/> to end the transaction.
-            </summary>
-            <example cref="T:System.InvalidOperationException">Throws if a transaction has already begun.</example>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.SaveTransactionPoint">
-            <summary>
-            Creates a savepoint in the database at the current point in the transaction timeline.
-            Begins a new transaction if one is not in progress.
-            
-            Call <see cref="M:AVOSCloud.Internal.SQLiteConnection.RollbackTo(System.String)"/> to undo transactions since the returned savepoint.
-            Call <see cref="M:AVOSCloud.Internal.SQLiteConnection.Release(System.String)"/> to commit transactions after the savepoint returned here.
-            Call <see cref="M:AVOSCloud.Internal.SQLiteConnection.Commit"/> to end the transaction, committing all changes.
-            </summary>
-            <returns>A string naming the savepoint.</returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Rollback">
-            <summary>
-            Rolls back the transaction that was begun by <see cref="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction"/> or <see cref="M:AVOSCloud.Internal.SQLiteConnection.SaveTransactionPoint"/>.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.RollbackTo(System.String)">
-            <summary>
-            Rolls back the savepoint created by <see cref="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction"/> or SaveTransactionPoint.
-            </summary>
-            <param name="savepoint">The name of the savepoint to roll back to, as returned by <see cref="M:AVOSCloud.Internal.SQLiteConnection.SaveTransactionPoint"/>.  If savepoint is null or empty, this method is equivalent to a call to <see cref="M:AVOSCloud.Internal.SQLiteConnection.Rollback"/></param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.RollbackTo(System.String,System.Boolean)">
-            <summary>
-            Rolls back the transaction that was begun by <see cref="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction"/>.
-            </summary>
-            <param name="noThrow">true to avoid throwing exceptions, false otherwise</param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Release(System.String)">
-            <summary>
-            Releases a savepoint returned from <see cref="M:AVOSCloud.Internal.SQLiteConnection.SaveTransactionPoint"/>.  Releasing a savepoint 
-               makes changes since that savepoint permanent if the savepoint began the transaction,
-               or otherwise the changes are permanent pending a call to <see cref="M:AVOSCloud.Internal.SQLiteConnection.Commit"/>.
-            
-            The RELEASE command is like a COMMIT for a SAVEPOINT.
-            </summary>
-            <param name="savepoint">The name of the savepoint to release.  The string should be the result of a call to <see cref="M:AVOSCloud.Internal.SQLiteConnection.SaveTransactionPoint"/></param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Commit">
-            <summary>
-            Commits the transaction that was begun by <see cref="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction"/>.
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:AVOSCloud.Internal.SQLiteConnection.RunInTransaction(System.Action)" -->
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.InsertAll(System.Collections.IEnumerable,System.Boolean)">
-            <summary>
-            Inserts all specified objects.
-            </summary>
-            <param name="objects">
-            An <see cref="!:IEnumerable"/> of the objects to insert.
-            <param name="runInTransaction"/>
-            A boolean indicating if the inserts should be wrapped in a transaction.
-            </param>
-            <returns>
-            The number of rows added to the table.
-            </returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:AVOSCloud.Internal.SQLiteConnection.InsertAll(System.Collections.IEnumerable,System.String,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:AVOSCloud.Internal.SQLiteConnection.InsertAll(System.Collections.IEnumerable,System.Type,System.Boolean)" -->
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Insert(System.Object)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <returns>
-            The number of rows added to the table.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.InsertOrReplace(System.Object)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            If a UNIQUE constraint violation occurs with
-            some pre-existing object, this function deletes
-            the old object.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <returns>
-            The number of rows modified.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Insert(System.Object,System.Type)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <param name="objType">
-            The type of object to insert.
-            </param>
-            <returns>
-            The number of rows added to the table.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.InsertOrReplace(System.Object,System.Type)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            If a UNIQUE constraint violation occurs with
-            some pre-existing object, this function deletes
-            the old object.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <param name="objType">
-            The type of object to insert.
-            </param>
-            <returns>
-            The number of rows modified.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Insert(System.Object,System.String)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <param name="extra">
-            Literal SQL code that gets placed into the command. INSERT {extra} INTO ...
-            </param>
-            <returns>
-            The number of rows added to the table.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Insert(System.Object,System.String,System.Type)">
-            <summary>
-            Inserts the given object and retrieves its
-            auto incremented primary key if it has one.
-            </summary>
-            <param name="obj">
-            The object to insert.
-            </param>
-            <param name="extra">
-            Literal SQL code that gets placed into the command. INSERT {extra} INTO ...
-            </param>
-            <param name="objType">
-            The type of object to insert.
-            </param>
-            <returns>
-            The number of rows added to the table.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Update(System.Object)">
-            <summary>
-            Updates all of the columns of a table using the specified object
-            except for its primary key.
-            The object is required to have a primary key.
-            </summary>
-            <param name="obj">
-            The object to update. It must have a primary key designated using the PrimaryKeyAttribute.
-            </param>
-            <returns>
-            The number of rows updated.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Update(System.Object,System.Type)">
-            <summary>
-            Updates all of the columns of a table using the specified object
-            except for its primary key.
-            The object is required to have a primary key.
-            </summary>
-            <param name="obj">
-            The object to update. It must have a primary key designated using the PrimaryKeyAttribute.
-            </param>
-            <param name="objType">
-            The type of object to insert.
-            </param>
-            <returns>
-            The number of rows updated.
-            </returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:AVOSCloud.Internal.SQLiteConnection.UpdateAll(System.Collections.IEnumerable,System.Boolean)" -->
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Delete(System.Object)">
-            <summary>
-            Deletes the given object from the database using its primary key.
-            </summary>
-            <param name="objectToDelete">
-            The object to delete. It must have a primary key designated using the PrimaryKeyAttribute.
-            </param>
-            <returns>
-            The number of rows deleted.
-            </returns>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.Delete``1(System.Object)">
-            <summary>
-            Deletes the object with the specified primary key.
-            </summary>
-            <param name="primaryKey">
-            The primary key of the object to delete.
-            </param>
-            <returns>
-            The number of objects deleted.
-            </returns>
-            <typeparam name='T'>
-            The type of object.
-            </typeparam>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnection.DeleteAll``1">
-            <summary>
-            Deletes all the objects from the specified table.
-            WARNING WARNING: Let me repeat. It deletes ALL the objects from the
-            specified table. Do you really want to do that?
-            </summary>
-            <returns>
-            The number of objects deleted.
-            </returns>
-            <typeparam name='T'>
-            The type of objects to delete.
-            </typeparam>
-        </member>
-        <member name="P:AVOSCloud.Internal.SQLiteConnection.BusyTimeout">
-            <summary>
-            Sets a busy handler to sleep the specified amount of time when a table is locked.
-            The handler will sleep multiple times until a total time of <see cref="P:AVOSCloud.Internal.SQLiteConnection.BusyTimeout"/> has accumulated.
-            </summary>
-        </member>
-        <member name="P:AVOSCloud.Internal.SQLiteConnection.TableMappings">
-            <summary>
-            Returns the mappings from types to tables that the connection
-            currently understands.
-            </summary>
-        </member>
-        <member name="P:AVOSCloud.Internal.SQLiteConnection.IsInTransaction">
-            <summary>
-            Whether <see cref="M:AVOSCloud.Internal.SQLiteConnection.BeginTransaction"/> has been called and the database is waiting for a <see cref="M:AVOSCloud.Internal.SQLiteConnection.Commit"/>.
-            </summary>
-        </member>
-        <member name="T:AVOSCloud.Internal.SQLiteConnectionString">
-            <summary>
-            Represents a parsed connection string.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteCommand.OnInstanceCreated(System.Object)">
-             <summary>
-             Invoked every time an instance is loaded from the database.
-             </summary>
-             <param name="obj">
-             The newly created object.
-             </param>
-             <remarks>
-             This can be overridden in combination with the <see cref="M:AVOSCloud.Internal.SQLiteConnection.NewCommand"/>
-             method to hook into the life-cycle of objects.
-            
-             Type safety is not possible because MonoTouch does not support virtual generic methods.
-             </remarks>
-        </member>
-        <member name="T:AVOSCloud.Internal.PreparedSqlLiteInsertCommand">
-            <summary>
-            Since the insert never changed, we only need to prepare once.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.TableQuery`1.CompileNullBinaryExpression(System.Linq.Expressions.BinaryExpression,AVOSCloud.Internal.TableQuery{`0}.CompileResult)">
-            <summary>
-            Compiles a BinaryExpression where one of the parameters is null.
-            </summary>
-            <param name="parameter">The non-null parameter</param>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnectionPool.Reset">
-            <summary>
-            Closes all connections managed by this pool.
-            </summary>
-        </member>
-        <member name="M:AVOSCloud.Internal.SQLiteConnectionPool.ApplicationSuspended">
-            <summary>
-            Call this method when the application is suspended.
-            </summary>
-            <remarks>Behaviour here is to close any open connections.</remarks>
-        </member>
-        <member name="P:AVOSCloud.Internal.SQLiteConnectionPool.Shared">
-            <summary>
-            Gets the singleton instance of the connection tool.
-            </summary>
         </member>
         <member name="T:AVOSCloud.RealtimeMessageV2.AVIMAudioMessage">
             <summary>
@@ -3111,10 +2498,21 @@
             富媒体消息的消息体，默认 LeanCloud 采用的是 JSON 的编码格式发送消息。
             </summary>
         </member>
+        <member name="P:AVOSCloud.RealtimeMessageV2.AVIMTypedMessage.Title">
+            <summary>
+            富媒体消息的标题
+            </summary>
+        </member>
         <member name="P:AVOSCloud.RealtimeMessageV2.AVIMTypedMessage.MessageBody">
             <summary>
             编码之后的消息体字符串
             </summary>
+        </member>
+        <member name="M:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase.#ctor(AVOSCloud.RealtimeMessageV2.AVIMMessageMediaType)">
+             <summary>
+            创建一个新的文件消息 <see cref="T:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase"/> class.
+             </summary>
+             <param name="mediaType">Type of the media.</param>
         </member>
         <member name="M:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase.#ctor(System.String,System.IO.Stream,AVOSCloud.RealtimeMessageV2.AVIMMessageMediaType)">
             <summary>
@@ -3136,6 +2534,19 @@
             </summary>
             <param name="url"></param>
         </member>
+        <member name="P:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase.Url">
+            <summary>
+            文件的物理地址
+            </summary>
+        </member>
+        <member name="P:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase.FileUploadProgress">
+            <summary>
+            文件上传的进度监测
+            </summary>
+            <value>
+            The file upload progress.
+            </value>
+        </member>
         <member name="P:AVOSCloud.RealtimeMessageV2.AVIMFileMessageBase.SourceFile">
             <summary>
             富媒体消息中对应的物理文件内容，图片，视频，音频都必须有这个属性
@@ -3150,6 +2561,13 @@
             <summary>
             构造一个音频消息
             </summary>
+        </member>
+        <member name="M:AVOSCloud.RealtimeMessageV2.AVIMCacheManager.CleanAsync(AVOSCloud.RealtimeMessageV2.AVIMClient)">
+            <summary>
+            Cleans the asynchronous.
+            </summary>
+            <param name="client">The client.</param>
+            <returns></returns>
         </member>
         <member name="T:AVOSCloud.RealtimeMessageV2.AVIMClient">
             <summary>
@@ -3292,11 +2710,31 @@
             <param name="clientIds">被查询的 Client Ids</param>
             <returns></returns>
         </member>
+        <member name="M:AVOSCloud.RealtimeMessageV2.AVIMClient.CleanCacheAsync">
+            <summary>
+            删除当前 Client 所有跟聊天相关的本地聊天记录缓存。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AVOSCloud.RealtimeMessageV2.AVIMClient.CleanCacheAsync(AVOSCloud.RealtimeMessageV2.AVIMConversation)">
+            <summary>
+            删除指定的 AVIMConversation 内的本地聊天记录缓存。
+            </summary>
+            <param name="conversation">指定的 AVIMConversation</param>
+            <returns></returns>
+        </member>
         <member name="M:AVOSCloud.RealtimeMessageV2.AVIMClient.OpenThenSendAsync(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             
             </summary>
             <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AVOSCloud.RealtimeMessageV2.AVIMClient.RestoreDerivedTypedMessageFromDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Restores the derived typed message from dictionary.
+            </summary>
+            <param name="cmdBody">The command body.</param>
             <returns></returns>
         </member>
         <member name="M:AVOSCloud.RealtimeMessageV2.AVIMClient.invokeOnConversationMembersChangedOnClient(System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
@@ -3627,6 +3065,16 @@
             </remarks>
             </summary>
         </member>
+        <member name="E:AVOSCloud.RealtimeMessageV2.AVIMConversation.OnMessageSent">
+            <summary>
+            Occurs when [on message sent].
+            </summary>
+        </member>
+        <member name="E:AVOSCloud.RealtimeMessageV2.AVIMConversation.OnMessageDeliverd">
+            <summary>
+            在消息送达到会话中的其他成员时，会激发此事件。
+            </summary>
+        </member>
         <member name="E:AVOSCloud.RealtimeMessageV2.AVIMConversation.OnTypedMessageReceived">
             <summary>
             收到富媒体消息时激发的事件
@@ -3665,11 +3113,6 @@
         <member name="E:AVOSCloud.RealtimeMessageV2.AVIMConversation.OnLocationMessageReceived">
             <summary>
             收到地理位置消息时激发的事件
-            </summary>
-        </member>
-        <member name="E:AVOSCloud.RealtimeMessageV2.AVIMConversation.OnMessageDeliverd">
-            <summary>
-            在消息送达到会话中的其他成员时，会激发此事件。
             </summary>
         </member>
         <member name="P:AVOSCloud.RealtimeMessageV2.AVIMConversation.ConversationId">
@@ -4476,6 +3919,13 @@
             <summary>
             Wraps the custom settings object for AVOSCloud so that it can be exposed as ApplicationSettings.
             </summary>
+        </member>
+        <member name="M:AVOSCloud.RealtimeMessage.RealtimeMessageHooks.webSocketClient_MessageReceivedV2(System.Object,WebSocketSharp.MessageEventArgs)">
+            <summary>
+            websocket 接受消息的事件监听
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:WebSocketSharp.MessageEventArgs"/> instance containing the event data.</param>
         </member>
     </members>
 </doc>

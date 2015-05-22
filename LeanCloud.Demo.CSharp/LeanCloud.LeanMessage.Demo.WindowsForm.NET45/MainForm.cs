@@ -90,9 +90,11 @@ namespace SDK.Test.WinForm
             });
         }
 
-        private void selfClient_OnMessageReceieved(object sender, AVIMOnMessageReceivedEventArgs e)
+        private async void selfClient_OnMessageReceieved(object sender, AVIMOnMessageReceivedEventArgs e)
         {
             var flag = currentConversation != null;
+            await e.Conversation.FetchAsync();
+            currentConversation = await selfClient.GetQuery().GetAsync(e.Conversation.ConversationId);
             if (flag)
             {
                 flag = e.Conversation.ConversationId == currentConversation.ConversationId;
