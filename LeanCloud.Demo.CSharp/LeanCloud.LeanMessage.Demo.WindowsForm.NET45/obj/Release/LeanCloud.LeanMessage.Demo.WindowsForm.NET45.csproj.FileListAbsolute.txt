@@ -16,3 +16,5 @@ C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\SQLite.Net.Platform.Generic.dll
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.pdb
 C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\AVOSCloud.NetFx45.xml
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\Newtonsoft.Json.dll
+C:\Users\Cloud\Documents\windows-phone-sdk-demos\LeanCloud.Demo.CSharp\LeanCloud.LeanMessage.Demo.WindowsForm.NET45\bin\Release\Newtonsoft.Json.xml

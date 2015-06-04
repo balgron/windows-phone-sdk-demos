@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanStorage.Demo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanMessage.Demo.WPF.NET45", "LeanCloud.LeanMessage.Demo.WPF.NET45\LeanCloud.LeanMessage.Demo.WPF.NET45.csproj", "{C60FCF93-67E0-459C-A89F-C802FBE07C71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCloud.LeanStorage.Demo.WPF.NET45", "LeanCloud.LeanStorage.Demo.WPF.NET45\LeanCloud.LeanStorage.Demo.WPF.NET45.csproj", "{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,22 @@ Global
 		{C60FCF93-67E0-459C-A89F-C802FBE07C71}.Test|Any CPU.Build.0 = Release|Any CPU
 		{C60FCF93-67E0-459C-A89F-C802FBE07C71}.Test|ARM.ActiveCfg = Release|Any CPU
 		{C60FCF93-67E0-459C-A89F-C802FBE07C71}.Test|x86.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.stage|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.stage|Any CPU.Build.0 = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.stage|ARM.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.stage|x86.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Test|Any CPU.Build.0 = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Test|ARM.ActiveCfg = Release|Any CPU
+		{3BEAE1F2-5ADC-489D-85DB-69710EABDD29}.Test|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
